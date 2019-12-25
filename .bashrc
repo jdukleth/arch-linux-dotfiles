@@ -2,8 +2,8 @@
 # ~/.bashrc
 #
 
-EDITOR="vim"
-TERMINAL="st"
+EDITOR="nano"
+TERMINAL="termite"
 TERM="st-256color"
 
 # If not running interactively, don't do anything
