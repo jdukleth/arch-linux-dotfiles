@@ -1,16 +1,16 @@
 #!/bin/bash
 
 LINES=20
-declare initialOptions=("Sites
+declare initialOptions=("www
 quit")
 
 choice=$(echo -e "${initialOptions[@]}" | dmenu -i -l $LINES -p 'Open in Code: ')
 
 case "$choice" in
 	quit) echo "Program terminated." && exit 1 ;;
-	Sites)
+	www)
 		count=0
-		fullPath=$HOME/Sites
+		fullPath=/var/www
 
 		# Prompt the user to choose a directory, file, open, or quit
 		dirChoice=$((ls -1 "$fullPath" && echo -e "open $fullPath\nquit") | dmenu -i -l $LINES -p 'Open in Code: ')
