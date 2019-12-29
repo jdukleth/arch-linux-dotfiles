@@ -30,7 +30,7 @@ alert = #dc322f
 [bar/mainbar-bspwm]
 monitor = ${env:MONITOR}
 width = 100%
-height = 27
+height = 54 
 fixed-center = true
 
 background = ${colors.background}
@@ -45,11 +45,11 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = mono:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = FontAwesome5Free:style=Solid:pixelsize=10;1
-font-3 = FontAwesome5Free:style=Solid:pixelsize=10;1
-font-4 = FontAwesome5Brands:style=Solid:pixelsize=10;1
+font-0 = mono:pixelsize=20;1
+font-1 = unifont:fontformat=truetype:size=20:antialias=false;0
+font-2 = FontAwesome5Free:style=Solid:pixelsize=20;1
+font-3 = FontAwesome5Free:style=Solid:pixelsize=20;1
+font-4 = FontAwesome5Brands:style=Solid:pixelsize=20;1
 
 modules-left = bspwm xwindow
 modules-center =
@@ -70,7 +70,7 @@ cursor-click = pointer
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 27
+height = 54
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 6.0
@@ -91,9 +91,9 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-0 = fixed:pixelsize=20;1
+font-1 = unifont:fontformat=truetype:size=20:antialias=false;0
+font-2 = siji:pixelsize=20;1
 
 modules-left = bspwm i3
 modules-center = mpd
