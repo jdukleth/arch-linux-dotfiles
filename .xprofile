@@ -1,0 +1,20 @@
+#! /bin/sh
+
+# window manager startup tasks
+# executed from bspwmrc
+# and login managers
+
+# HiDPI displays adjustment
+echo 'Xft.dpi: 170' | xrdb &
+
+remaps &       # override keys
+setbg &        # set wallpaper
+dunst &        # notifications daemon
+picom -b &     # X11 compositor
+sxhkd &        # keybinds
+unclutter &    # hide idle mouse pointer
+wmname LG3D &  # fix for Java apps
+redshift &     # turn night mode on
+
+# summon polybar
+~/.config/polybar/launch.sh
