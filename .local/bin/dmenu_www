@@ -4,7 +4,7 @@ LINES=20
 declare initialOptions=("Sites
 quit")
 
-choice=$(echo -e "${initialOptions[@]}" | dmenu -i -l $LINES -p 'Open in PhpStorm: ')
+choice=$(echo -e "${initialOptions[@]}" | dmenu -i -l $LINES -p 'Open in Code: ')
 
 case "$choice" in
 	quit) echo "Program terminated." && exit 1 ;;
@@ -13,20 +13,20 @@ case "$choice" in
 		fullPath=$HOME/Sites
 
 		# Prompt the user to choose a directory, file, open, or quit
-		dirChoice=$((ls -1 "$fullPath" && echo -e "open $fullPath\nquit") | dmenu -i -l $LINES -p 'Open in PhpStorm: ')
+		dirChoice=$((ls -1 "$fullPath" && echo -e "open $fullPath\nquit") | dmenu -i -l $LINES -p 'Open in Code: ')
 
 		# Loop until the user chooses open, quit, or chooses a file
 		while [[ "$dirChoice" != open* && "$dirChoice" != quit ]]; do
 			# Append the last choice to the full path
 			fullPath="$fullPath/$dirChoice"
 
-			# If the user has chosen a file, open it in vim and exit this menu
+			# If the user has chosen a file, open it in terminal and exit this menu
 			if [ -f "$fullPath" ]; then
-				st -t "Editing $dirChoice" -c "quick-edit" vim "$fullPath" && exit 1
+				st -t "Editing $dirChoice" -c "quick-edit" termite "$fullPath" && exit 1
 			fi
 
 			# The user did not open, quit, or choose a file, so prompt them again
-			dirChoice=$((ls -1 "$fullPath" && echo -e "open $fullPath\nquit") | dmenu -i -l $LINES -p 'Open in PhpStorm: ')
+			dirChoice=$((ls -1 "$fullPath" && echo -e "open $fullPath\nquit") | dmenu -i -l $LINES -p 'Open in Code: ')
 
 			# Increase count
 			let count=count+1
@@ -38,7 +38,7 @@ esac
 # The user has chosen to quit or open a directory
 case "$dirChoice" in
 	quit) echo "Program terminated." && exit 1 ;;
-	open*) phpstorm "$fullPath" ;;
+	open*) code "$fullPath" ;;
 	*) exit 1
 esac
 
